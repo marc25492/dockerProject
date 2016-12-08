@@ -1,6 +1,13 @@
 FROM ubuntu:latest
 MAINTAINER manclyon
 
+
+
+~~~~~ NEED to get the file from my AWS instance!!!!
+
+
+
+
 #access the tmp/shared folder (where java.tar.gz lives) and copy across..
 ADD jdk-8u112-linux-x64.tar.gz /opt
 ADD apache-maven-3.2.5-bin.tar.gz /opt
