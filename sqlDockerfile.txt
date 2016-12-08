@@ -1,0 +1,6 @@
+FROM mysql:latest
+MAINTAINER manclyon
+
+VOLUME ["/usr/sqlVol:/testVolume"]
+
+ENV MYSQL_ROOT_PASSWORD=123

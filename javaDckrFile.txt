@@ -1,0 +1,7 @@
+FROM ubuntu:latest
+MAINTAINER manclyon
+
+#access the tmp/shared folder (where java.tar.gz lives) and copy across..
+ADD /tmp/shared/jdk-8u112-linux-x64.tar.gz /opt
+
+#
