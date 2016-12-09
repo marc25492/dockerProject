@@ -1,4 +1,4 @@
-FROM dockerProject_javacont
+FROM dockerproject_javacont
 MAINTAINER manclyon
 
 
