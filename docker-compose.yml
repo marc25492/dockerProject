@@ -7,30 +7,35 @@ javaFile:
 
 jenkinsFile:
  build: ./jenkins
+ links: javaFile
  ports:
   - 8080:8080
  tty: true
-	
+
 jiraFile:
  build: ./jira
+ links: javaFile
  ports:
   - 8089:8089
  tty: true
-	
-nexusFile:
+
+ nexusFile:
  build: ./nexus
+ links: javaFile
  ports:
   - 8081:8081
  tty: true
-	
-tomcatFile:
+
+ tomcatFile:
  build: ./tomcat
+ links: javaFile
  ports:
   - 8083:8080
- tty: true
-	
-zabbixFile: 
+ tty: true	
+
+ zabbixFile: 
  build: ./zabbix
+ links: javaFile
  ports:
   - 8084:80
  tty: true
