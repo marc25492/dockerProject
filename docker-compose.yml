@@ -1,7 +1,12 @@
-version: "2"
+version: "1.9"
 
 
 services:
+
+ java:
+	build: ./java
+	tty: true
+
  jenkins:
 	build: ./jenkins
 	ports:
