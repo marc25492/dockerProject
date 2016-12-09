@@ -1,0 +1,36 @@
+version: "2"
+
+
+services:
+ jenkins:
+	build: ./jenkins
+	ports:
+	- "8080:8080"
+	tty: true
+	
+ jira:
+	build: ./jira
+	ports:
+	- "8089:8089"
+	tty: true
+	
+ nexus:
+	build: ./nexus
+	ports:
+	- "8081:8081"
+	tty: true
+	
+ tomcat:
+	build: ./tomcat
+	ports:
+	- "8083:8080"
+	tty: true
+	
+ zabbix: 
+	build: ./zabbix
+	ports:
+	- "8084:80"
+	tty: true
+	
+	
+	
