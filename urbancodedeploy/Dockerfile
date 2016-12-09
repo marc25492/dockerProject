@@ -1,4 +1,4 @@
-FROM javatest
+FROM dockerProject_javacont
 MAINTAINER manclyon
 
 
