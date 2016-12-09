@@ -1,46 +1,46 @@
 #version: "1.9"
 
 
-javaFile:
+javacont:
  build: ./java
  tty: true
 
-jenkinsFile:
+jenkinscont:
  build: ./jenkins
  links:
-  - javaFile
+  - javacont
  ports:
   - 8080:8080
  tty: true
 
-jiraFile:
+jiracont:
  build: ./jira
  links:
-  - javaFile
+  - javacont
  ports:
   - 8089:8089
  tty: true
 
-nexusFile:
+nexuscont:
  build: ./nexus
  links:
-  - javaFile
+  - javacont
  ports:
   - 8081:8081
  tty: true
 
-tomcatFile:
+tomcatcont:
  build: ./tomcat
  links:
-  - javaFile
+  - javacont
  ports:
   - 8083:8080
  tty: true
  
-zabbixFile: 
+zabbixcont: 
  build: ./zabbix
  links:
-  - javaFile
+  - javacont
  ports:
   - 8084:80
  tty: true
