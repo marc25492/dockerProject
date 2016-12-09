@@ -1,4 +1,4 @@
-FROM javatest
+FROM dockerProject_javaFile
 MAINTAINER manclyon
 
 ## Make directory and download installation file
