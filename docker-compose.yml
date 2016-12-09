@@ -31,8 +31,8 @@ tomcatFile:
  links: javaFile
  ports:
   - 8083:8080
- tty: true	
-
+ tty: true
+ 
 zabbixFile: 
  build: ./zabbix
  links: javaFile
