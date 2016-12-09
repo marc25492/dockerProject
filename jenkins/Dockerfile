@@ -18,4 +18,4 @@ RUN apt-get install jenkins -y
 CMD service jenkins start && tail -F /var/log/jenkins/jenkins.log
 
 #Output password
-CMD cat> /var/lib/jenkins/secrets/initialAdminPassword 
+#CMD cat> /var/lib/jenkins/secrets/initialAdminPassword 
