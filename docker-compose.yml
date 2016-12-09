@@ -1,37 +1,35 @@
 #version: "1.9"
 
 
-
-
- java:
+ javaFile:
 	build: ./java
 	tty: true
 
- jenkins:
-	build: ./jenkins
+ jenkinsFile:
+	buildFile: ./jenkins
 	ports:
 	- "8080:8080"
 	tty: true
 	
- jira:
+ jiraFile:
 	build: ./jira
 	ports:
 	- "8089:8089"
 	tty: true
 	
- nexus:
+ nexusFile:
 	build: ./nexus
 	ports:
 	- "8081:8081"
 	tty: true
 	
- tomcat:
+ tomcatFile:
 	build: ./tomcat
 	ports:
 	- "8083:8080"
 	tty: true
 	
- zabbix: 
+ zabbixFile: 
 	build: ./zabbix
 	ports:
 	- "8084:80"
