@@ -1,4 +1,4 @@
-FROM dockerProject_javacont_1
+FROM dockerproject_javacont_1
 MAINTAINER manclyon
 
 ## Make directory and download installation file
