@@ -20,6 +20,6 @@ RUN chmod -R 750 apache-tomcat-8.5.8
 RUN echo "export JAVA_HOME=/opt/jdk1.8.0_112" >> /etc/profile
 
 #Start the service
-WORKDIR usr/local/tomcat/apache-tomcat-8.5.8/bin
+WORKDIR /usr/local/tomcat/apache-tomcat-8.5.8/bin
 RUN chmod a+x startup.sh
-RUN ./startup.sh
+RUN ./startup.sh && bash
