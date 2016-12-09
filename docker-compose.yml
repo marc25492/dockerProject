@@ -19,21 +19,21 @@ jiraFile:
   - 8089:8089
  tty: true
 
- nexusFile:
+nexusFile:
  build: ./nexus
  links: javaFile
  ports:
   - 8081:8081
  tty: true
 
- tomcatFile:
+tomcatFile:
  build: ./tomcat
  links: javaFile
  ports:
   - 8083:8080
  tty: true	
 
- zabbixFile: 
+zabbixFile: 
  build: ./zabbix
  links: javaFile
  ports:
