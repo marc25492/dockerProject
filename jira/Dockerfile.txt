@@ -1,4 +1,4 @@
-FROM javatest3
+FROM dockerProject_javaFile
 MAINTAINER manclyon
 
 #Change work directory - to /opt
