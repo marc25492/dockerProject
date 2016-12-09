@@ -39,6 +39,3 @@ zabbixFile:
  ports:
   - 8084:80
  tty: true
-	
-	
-	
