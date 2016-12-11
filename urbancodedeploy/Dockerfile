@@ -1,6 +1,8 @@
 FROM dockerproject_javacont
 MAINTAINER manclyon
 
+#method:http://www.ibm.com/support/knowledgecenter/SS4GSP_6.2.0/com.ibm.udeploy.install.doc/topics/server_install_silent.html
+
 
 #Install unzipper 
 RUN apt-get install -y unzip
