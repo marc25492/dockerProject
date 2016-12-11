@@ -42,5 +42,5 @@ zabbixcont:
  links:
   - javacont
  ports:
-  - 8084:80
+  - 80:80
  tty: true
