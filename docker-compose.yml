@@ -1,46 +1,45 @@
-#version: "1.9"
+version: '2'
+services:
+ base:
+  build: ./java
+  image: dockerproject_javacont:latest
+  
+ jenkinscon:
+  build: ./jenkins
+  image: jenk:latest
+  depends_on:
+   - base
+  container_name: jenkcon
+  ports:
+   - "8080:8080"
+  tty: true
 
-
-javacont:
- build: ./java
- tty: true
-
-jenkinscont:
- build: ./jenkins
- links:
-  - javacont
- ports:
-  - 8080:8080
- tty: true
-
-jiracont:
- build: ./jira
- links:
-  - javacont
- ports:
-  - 8084:8080
- tty: true
-
-nexuscont:
- build: ./nexus
- links:
-  - javacont
- ports:
-  - 8081:8081
- tty: true
-
-tomcatcont:
- build: ./tomcat
- links:
-  - javacont
- ports:
-  - 8088:8080
- tty: true
- 
-zabbixcont: 
- build: ./zabbix
- links:
-  - javacont
- ports:
-  - 80:80
- tty: true
+ jiracon:
+  build: ./jira
+  image: jir:latest
+  depends_on:
+   - base
+  container_name: jiracon
+  ports:
+   - "8006:8080"
+  tty: true
+  
+ nexuscon:
+  build: ./nexus
+  image: nex:latest
+  depends_on:
+   - base
+  container_name: nexcon
+  ports:
+   - "8081:8081"
+  tty: true
+  
+ zabbixcon:
+  build: ./zabbix
+  image: zab:latest
+  depends_on:
+   - base
+  container_name: zabcon
+  ports:
+   - "80:80"
+  tty: true
