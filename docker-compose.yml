@@ -43,3 +43,13 @@ services:
   ports:
    - "80:80"
   tty: true
+
+ tomcatcon:
+  build: ./nexus
+  image: tom:latest
+  depends_on:
+   - base
+  container_name: tomcon
+  ports:
+   - "8086:8080"
+  tty: true
