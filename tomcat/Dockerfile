@@ -1,25 +1,24 @@
 FROM dockerproject_javacont
 MAINTAINER manclyon
 
-## Make directory and download installation file
-RUN mkdir /usr/local/tomcat
-WORKDIR /usr/local/tomcat
-RUN wget http://mirror.vorboss.net/apache/tomcat/tomcat-8/v8.5.8/bin/apache-tomcat-8.5.8.tar.gz
+#create group called tomcat
+RUN groupadd tomcat
 
-## Extract the file
-RUN tar xzvf apache-tomcat-8.5.8.tar.gz
+#create new tomcat user, which no one can log in to and a home directory of Tomcat
+RUN useradd -s /bin/false -g tomcat -d /opt/apache-tomcat-8.5.8 tomcat
 
-## Create a user in called "tomcat" in group "tomcat" 
-RUN useradd -s /sbin/nologin -d /opt/tomcat/temp tomcat
+WORKDIR /opt
 
-#Change the ownership to tomcat
-RUN chown -R tomcat:tomcat apache-tomcat-8.5.8.tar.gz
-RUN chmod -R 750 apache-tomcat-8.5.8
+#download Tomcat
+RUN wget http://apache.mirrors.nublue.co.uk/tomcat/tomcat-8/v8.5.8/bin/apache-tomcat-8.5.8.tar.gz
+RUN tar -xzvf apache-tomcat-8.5.8.tar.gz
 
-#Set the java home
-RUN echo "export JAVA_HOME=/opt/jdk1.8.0_112" >> /etc/profile
+#update permissions
+RUN chgrp -R tomcat /opt/apache-tomcat-8.5.8 #R flag gives ownership over entire directory
+RUN chmod -R g+rx apache-tomcat-8.5.8 #gives read and execute access to folder
 
-#Start the service
-WORKDIR /usr/local/tomcat/apache-tomcat-8.5.8/bin
+RUN echo "export JAVA_HOME=/opt/java/jdk1.8.0_05" >> /etc/profile
+
+WORKDIR /opt/apache-tomcat-8.5.8/bin/
 RUN chmod a+x startup.sh
-RUN ./startup.sh && bash
+ENTRYPOINT ./startup.sh && bash
