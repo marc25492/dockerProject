@@ -21,7 +21,7 @@ services:
    - base
   container_name: jiracon
   ports:
-   - "8006:8080"
+   - "8056:8082"
   tty: true
   
  nexuscon:
