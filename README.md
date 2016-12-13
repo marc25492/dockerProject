@@ -9,7 +9,8 @@
   
   -Step 2b: chmod +x /usr/local/bin/docker-compose
   
-  -Step 2c: docker-compose --version
+  -Step 2c: docker-compose --version (as a check that it is installed)
 
--Step 3: docker-compose up -d
+-Step 3: change directory to /dockerProject
 
+-Step 4: docker-compose up -d
