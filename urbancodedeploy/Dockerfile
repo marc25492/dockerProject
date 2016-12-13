@@ -43,16 +43,10 @@ chmod +x install-server.sh; sync
 #Copy
 RUN cp /usr/share/java/mysql.jar /ibm-ucd-install/lib/ext
 
-#Expose ports
-EXPOSE 8443
-EXPOSE 8080
 
 #Start execute the install .sh file
 RUN service mysql start &&\
-./install-server.sh << EOF\
-\n\
-\n\
-EOF
+./install-server.sh << EOF
 
 # Start mysql and urbancode deploy server 
 ENTRYPOINT service mysql start && /opt/ibm-ucd/server/bin/server run
