@@ -1,7 +1,7 @@
 # How-To:
 
 
--Step 1: Download/Install Docker
+-Step 1: Download/Install Docker and Git
 
 -Step 2: Download (clone) my git repository: https://github.com/marc25492/dockerProject
 
