@@ -13,7 +13,7 @@ RUN wget https://www15.software.ibm.com/sdfdl/v2/fulfill/CNEM5EN/Xa.2/Xb.aFmQQe8
 #Extract the zip file 
 RUN unzip URBANCODE_DEPLOY_6.2.2_EN_EVAL.zip
 
-#Install the dependencies (open jdk/jre and mysql)
+#Install the dependencies (mysql)
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y mysql-server libmysql-java 
 
 #Set java home
