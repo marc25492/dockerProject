@@ -1,7 +1,7 @@
 # How-To:
 
 
--Step 1: Download my git repository: https://github.com/marc25492/dockerProject
+-Step 1: Download (clone) my git repository: https://github.com/marc25492/dockerProject
 
 -Step 2: install Docker-compose:
 
